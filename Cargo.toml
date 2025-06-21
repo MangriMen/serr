@@ -1,0 +1,6 @@
+[workspace]
+resolver = "2"
+members = ["serr", "serr_derive", "serr_tests"]
+
+[patch.crates-io]
+serr = { path = "serr" }
