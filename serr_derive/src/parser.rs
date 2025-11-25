@@ -16,12 +16,11 @@ impl Parse for SerrAttr {
         let mut name = None;
 
         for nv in name_values {
-            if nv.path.is_ident("name") {
-                if let Expr::Lit(expr_lit) = nv.value {
-                    if let Lit::Str(lit_str) = expr_lit.lit {
-                        name = Some(lit_str.value());
-                    }
-                }
+            if nv.path.is_ident("name")
+                && let Expr::Lit(expr_lit) = nv.value
+                && let Lit::Str(lit_str) = expr_lit.lit
+            {
+                name = Some(lit_str.value());
             }
         }
 

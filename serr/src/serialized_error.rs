@@ -1,8 +1,8 @@
 use std::borrow::Cow;
 
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct SerializedError {
     pub code: Cow<'static, str>,
     pub fields: Option<serde_json::Value>,
